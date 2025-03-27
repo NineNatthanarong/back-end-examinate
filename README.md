@@ -11,8 +11,8 @@ A  backend project for test.
 
 1. Clone the repository:
 ```bash
-git clone <your-repository-url>
-cd <project-directory>
+git clone https://github.com/NineNatthanarong/back-end-examinate.git
+cd back-end-examinate
 ```
 
 2. Start the application using Docker Compose:
