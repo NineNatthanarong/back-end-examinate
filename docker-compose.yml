@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongodb
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017/seed_db
+      - JWT_SECRET=${JWT_SECRET}
+    volumes:
+      - ./seeds.csv:/app/seeds.csv
+      - ./.env:/app/.env
+    networks:
+      - seed-network
+
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_DATABASE=seed_db
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - seed-network
+
+networks:
+  seed-network:
+    driver: bridge
+
+volumes:
+  mongo-data:

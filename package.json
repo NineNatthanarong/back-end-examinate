@@ -1,0 +1,16 @@
+{
+  "name": "seed-importer",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "csv-parser": "^3.0.0",
+    "mongodb": "^5.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^9.0.0",
+    "dotenv": "^16.0.0",
+    "swagger-ui-express": "^5.0.0"
+  }
+}
